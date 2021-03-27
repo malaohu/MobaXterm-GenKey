@@ -96,12 +96,12 @@ def GenerateLicense(Type : LicenseType, Count : int, UserName : str, MajorVersio
                                                           0,    # No Games flag. 0 means "NoGames = false". But it does not work.
                                                           0)    # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
     EncodedLicenseString = VariantBase64Encode(EncryptBytes(0x787, LicenseString.encode())).decode()
-    with zipfile.ZipFile(EncodedLicenseString, 'w') as f:
+    with zipfile.ZipFile('/tmp/' + EncodedLicenseString, 'w') as f:
         f.writestr('Pro.key', data = EncodedLicenseString)
     return EncodedLicenseString
 
 
-@app.route('/')
+@app.route('/gen')
 def get_lc():
     name = request.args.get('name', '')
     version = request.args.get('ver', '')
@@ -111,14 +111,22 @@ def get_lc():
     lc = GenerateLicense(LicenseType.Professional, 1, name, MajorVersion, MinorVersion)
     return lc
 
+
 @app.route('/download/<lc>')
 def download_lc(lc):
     if lc and len(lc) > 5 and os.path.exists('./' + lc):
-        return send_file('./' + lc,
+        return send_file('/tmp/' + lc,
             as_attachment=True,
             attachment_filename='Custom.mxtpro') 
     else:
         return "请确保生成成功后再来下载！"
+
+
+@app.route('/')
+def get():
+    lc = get_lc()
+    return download_lc(lc)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
