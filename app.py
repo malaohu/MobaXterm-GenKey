@@ -105,10 +105,12 @@ def GenerateLicense(Type : LicenseType, Count : int, UserName : str, MajorVersio
 def get_lc():
     name = request.args.get('name', '')
     version = request.args.get('ver', '')
+    count = int(request.args.get('count', '1'))
+    
     MajorVersion, MinorVersion = version.split('.')[0:2]
     MajorVersion = int(MajorVersion)
     MinorVersion = int(MinorVersion)
-    lc = GenerateLicense(LicenseType.Professional, 1, name, MajorVersion, MinorVersion)
+    lc = GenerateLicense(LicenseType.Professional, count, name, MajorVersion, MinorVersion)
     return lc
 
 
