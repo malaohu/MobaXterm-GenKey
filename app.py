@@ -1,7 +1,7 @@
 #/usr/bin/env python3
 
 import os, sys, zipfile
-from flask import Flask, request, send_file, redirect, url_for
+from flask import Flask, request, send_file
 import os.path
 
 app = Flask(__name__)
