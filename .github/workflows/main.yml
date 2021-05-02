@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          tags: ${{ github.repository_owner }}/mobaxterm_genkey:latest
+          tags: ${{ github.repository_owner }}/mobaxterm-genkey:latest
