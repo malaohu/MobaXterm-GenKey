@@ -43,18 +43,13 @@
       }
       .container {
       padding: 16px 0;
-      text-align:left;
+      text-align: left;
       }
-      span.ver {
-      float: right;
-      padding-top: 0;
-      padding-right: 15px;
+      .github {
+      padding: 16px 0;
+      text-align: center;
       }
       @media screen and (max-width: 300px) {
-      span.psw {
-      display: block;
-      float: none;
-      }
     </style>
   </head>
   <body>
@@ -69,6 +64,11 @@
         <input type="text" placeholder="Enter Version: (21.1)" name="ver" required>
       </div>
       <button type="submit">Gen!</button>
+      <div class="github">
+        <label style="padding-left: 15px">
+        </label>
+        <span><a style="text-decoration: none;" href="https://github.com/malaohu/MobaXterm-GenKey">View on GitHub</a><img src="https://github.githubassets.com/favicons/favicon.svg" height="16px"></span>
+      </div>
     </form>
   </body>
 </html>
