@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           file: dockerfile
-          tags: ${{ github.repository_owner }}/MobaXterm_GenKey:latest
+          tags: ${{ github.repository_owner }}/mobaxterm_genkey:latest
