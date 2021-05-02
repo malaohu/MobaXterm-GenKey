@@ -1,9 +1,7 @@
 #/usr/bin/env python3
 
 import os, sys, zipfile
-from flask import Flask
-from flask import request
-from flask import send_file
+from flask import Flask, request, send_file, redirect, url_for
 import os.path
 
 app = Flask(__name__)
@@ -102,34 +100,44 @@ def GenerateLicense(Type : LicenseType, Count : int, UserName : str, MajorVersio
     return FileName
 
 
-@app.route('/gen')
+#@app.route('/gen')
 def get_lc():
     name = request.args.get('name', '')
     version = request.args.get('ver', '')
     count = int(request.args.get('count', '1'))
-    
-    MajorVersion, MinorVersion = version.split('.')[0:2]
+    try:
+        MajorVersion, MinorVersion = version.split('.')[0:2]
+    except:
+        return
     MajorVersion = int(MajorVersion)
     MinorVersion = int(MinorVersion)
     lc = GenerateLicense(LicenseType.Professional, count, name, MajorVersion, MinorVersion)
     return lc
 
 
-@app.route('/download/<lc>')
+#@app.route('/download/<lc>')
 def download_lc(lc):
     if lc and len(lc) > 5 and os.path.exists('./' + lc):
         return send_file(lc,
             as_attachment=True,
             attachment_filename='Custom.mxtpro') 
     else:
-        return "请确保生成成功后再来下载！检查用户名版本号是否正确！"
+        return "请检查用户名版本号是否正确！"
 
 
-@app.route('/')
+@app.route('/gen')
 def get():
     lc = get_lc()
     return download_lc(lc)
 
 
+@app.route('/')
+def index():
+    return send_file('index.html')
+
+
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
+
