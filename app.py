@@ -82,7 +82,7 @@ def DecryptBytes(key : int, bs : bytes):
 class LicenseType:
     Professional = 1
     Educational = 3
-    Persional = 4
+    Personal = 4
 
 def GenerateLicense(Type : LicenseType, Count : int, UserName : str, MajorVersion : int, MinorVersion):
     assert(Count >= 0)
