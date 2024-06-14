@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mobaxterm-genkey:$(date +%s)
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mobaxterm-genkey:latest
