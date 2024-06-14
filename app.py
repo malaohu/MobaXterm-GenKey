@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+# /usr/bin/env python3
 
 import os
 import os.path
@@ -101,7 +101,7 @@ def GenerateLicense(Type: int, Count: int, UserName: str, MajorVersion: int, Min
         MajorVersion, MinorVersion, MinorVersion,
         0,  # Unknown
         0,  # No Games flag. 0 means "NoGames = false". But it does not work.
-        0  # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
+        0   # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
     )
     EncodedLicenseString = VariantBase64Encode(EncryptBytes(0x787, LicenseString.encode())).decode()
     FileName = EncodedLicenseString.replace('/', '').replace('\\', '')
@@ -110,7 +110,7 @@ def GenerateLicense(Type: int, Count: int, UserName: str, MajorVersion: int, Min
     return FileName
 
 
-#@app.route('/gen')
+# @app.route('/gen')
 def get_lc():
     name = request.args.get('name', '')
     version = request.args.get('ver', '')
@@ -125,14 +125,16 @@ def get_lc():
     return lc
 
 
-#@app.route('/download/<lc>')
+# @app.route('/download/<lc>')
 def download_lc(lc):
     if lc and len(lc) > 5 and os.path.exists('./' + lc):
-        return send_file(lc,
-                         as_attachment=True,
-                         attachment_filename='Custom.mxtpro')
+        return send_file(
+            lc,
+            as_attachment=True,
+            attachment_filename='Custom.mxtpro'
+        )
     else:
-        return "请检查用户名版本号是否正确！"
+        return "请检查用户名、版本号是否正确！"
 
 
 @app.route('/gen')
