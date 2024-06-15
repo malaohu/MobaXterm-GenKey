@@ -21,8 +21,11 @@ docker pull seeleo/mobaxterm-genkey:latest
 docker run -d -p 5000:5000 seeleo/mobaxterm-genkey:latest
 ```
 
+## Screenshot
+
+![mobaxterm seeleo com](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/cc06a089-9a21-43af-a7f5-06d96c720a0b)
+
 ## Credits
 
-> 核心内容来自：https://github.com/flygon2018/MobaXterm-keygen
-> 
-> 详细介绍文章：https://51.ruyo.net/17008.html
+> - https://github.com/flygon2018/MobaXterm-keygen
+> - https://51.ruyo.net/17008.html
