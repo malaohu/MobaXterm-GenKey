@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #0056b3;
+            color: #6C809A;
             text-justify: newspaper;
         }
 
@@ -33,7 +33,6 @@
             display: block;
             width: 100%;
             padding: 13px;
-            background-color: #0056b3;
             color: white;
             border: none;
             border-radius: 5px;
@@ -113,21 +112,34 @@
             padding-bottom: 3px;
             vertical-align: middle;
         }
+
+        #btn-reset {
+            background-color: #75BBA7;
+        }
+
+        #btn-submit {
+            background-color: #6C809A;
+        }
     </style>
 </head>
 <body>
 <form action="./gen" mothod="get">
-    <h1>MobaXterm Keygen</h1>
+    <h1>MobaXterm GenKey</h1>
     <div class="formcontainer"></div>
     <hr/>
     <div class="container">
         <label for="name"><strong>Name</strong></label>
-        <input name="name" placeholder="Enter name: " required type="text">
+        <label>
+            <input name="name" placeholder="Enter Name" required type="text">
+        </label>
         <div id="space"></div>
         <label for="ver"><strong>Version</strong></label>
-        <input name="ver" placeholder="Enter version: (21.1)" required type="text">
+        <label>
+            <input name="ver" placeholder="Enter Version (24.1)" pattern="[0-9]+(\.[0-9]+)?" required type="text">
+        </label>
     </div>
-    <button type="submit">Generate !</button>
+    <button id="btn-reset" type="reset">Reset</button>
+    <button id="btn-submit" type="submit">Generate</button>
     <div class="github">
         <label>
         </label>
