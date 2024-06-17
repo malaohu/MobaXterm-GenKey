@@ -44,4 +44,7 @@ jobs:
           push: true
           context: .
           file: ./Dockerfile
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mobaxterm-genkey:latest
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/mobaxterm-genkey:latest
+            ghcr.io/${{ github.actor }}/mobaxterm-genkey:latest
