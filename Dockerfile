@@ -11,5 +11,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD [ "python", "./app.py" ]
-
-HEALTHCHECK --interval=5s --timeout=3s  --retries=3 CMD curl -f -k http://localhost:5000/ || exit 1
