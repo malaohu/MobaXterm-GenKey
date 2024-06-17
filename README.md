@@ -2,8 +2,7 @@
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/lzcapp/MobaXterm-GenKey/main.yml?style=for-the-badge)
 &ensp; ![Docker Image Version](https://img.shields.io/docker/v/seeleo/mobaxterm-genkey?style=for-the-badge)
-&ensp;
-![Docker Image Size](https://img.shields.io/docker/image-size/seeleo/mobaxterm-genkey?style=for-the-badge)
+&ensp; ![Docker Image Size](https://img.shields.io/docker/image-size/seeleo/mobaxterm-genkey?style=for-the-badge) &ensp; ![Website](https://img.shields.io/website?url=https%3A%2F%2Fmobaxterm.seeleo.com%2F&style=for-the-badge&label=mobaxterm.seeleo.com)
 
 **FOR EDUCATIONAL AND TESTING PURPOSE ONLY**
 
