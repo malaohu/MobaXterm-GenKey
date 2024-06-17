@@ -22,9 +22,19 @@ python app.py
 
 ## Docker
 
+### Docker Hub
+
 ```
 docker pull seeleo/mobaxterm-genkey:latest
 docker run -d -p 5000:5000 seeleo/mobaxterm-genkey:latest
+```
+
+
+### Container Registry (GitHub)
+
+```
+docker pull ghcr.io/lzcapp/mobaxterm-genkey:latest
+docker run -d -p 5000:5000 ghcr.io/lzcapp/mobaxterm-genkey:latest
 ```
 
 ## Screenshot
