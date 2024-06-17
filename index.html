@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
-    <title>MobaXterm Keygen</title>
+    <title>MobaXterm GenKey</title>
     <link href="https://fonts.googleapis.cnpmjs.org/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
         body {
@@ -112,12 +113,35 @@
             vertical-align: middle;
         }
 
-        #btn-reset {
+        #btnReset {
+            margin-top: 15px;
             background-color: #757575;
         }
 
-        #btn-submit {
+        #btnSubmit {
             background-color: #3F51B5;
+        }
+
+        #lblName, #lblVersion {
+            font-weight: bold;
+        }
+
+        #inputName, #inputVersion {
+            height: 35px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px 5px 5px 10px;
+        }
+
+        #inputName {
+            width: 300px;
+            height: 47px;
+            color: #333;
+        }
+
+        #inputVersion {
+            width: 283px;
+            height: 35px;
         }
     </style>
 </head>
@@ -125,32 +149,49 @@
 <form action="./gen" mothod="get">
     <h1>MobaXterm&ensp;GenKey</h1>
     <div class="container">
-        <label for="name"><strong>Name</strong></label>
+        <label for="name" id="lblName">Name</label>
         <label>
-            <input name="name" placeholder="Enter Name" required type="text">
+            <input name="name" id="inputName" placeholder="Enter Name" required type="text">
         </label>
         <div id="space"></div>
-        <label for="ver"><strong>Version</strong></label>
+        <label for="ver" id="lblVersion">Version</label>
         <label>
-            <input name="ver" pattern="[0-9]+(\.[0-9]+)?" placeholder="Enter Version (24.1)" required type="text">
+            <input name="ver" id="inputVersion" type="number" placeholder="Enter Version (24.1)" step="0.1" min="0" />
         </label>
     </div>
-    <button id="btn-reset" type="reset">Reset</button>
-    <button id="btn-submit" type="submit">Generate</button>
+    <button id="btnReset" type="reset">Reset</button>
+    <button id="btnSubmit" type="submit">Generate</button>
     <div class="github">
         <label>
         </label>
         <span>
             <a href="https://github.com/lzcapp/MobaXterm-GenKey" style="text-decoration: none;">
-                <img src="https://github.githubassets.com/favicons/favicon.svg">
+                <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
                 MobaXterm-GenKey
             </a>
-            forked from
+            <span id="forked">forked from</span>
             <a href="https://github.com/malaohu/MobaXterm-GenKey" style="text-decoration: none;">
                 malaohu
             </a>
         </span>
     </div>
 </form>
+<script>
+    const userLanguage = navigator.language || navigator.userLanguage;
+    const languageCode = userLanguage.substring(0, 2);
+
+    console.log(languageCode);
+
+    if (languageCode === "zh") {
+        document.documentElement.lang = "zh";
+        document.getElementById("lblName").innerHTML = "用户名"
+        document.getElementById("inputName").placeholder = "请输入用户名"
+        document.getElementById("lblVersion").innerHTML = "版本"
+        document.getElementById("inputVersion").placeholder = "请输入版本（24.1）"
+        document.getElementById("btnReset").innerHTML = "清空"
+        document.getElementById("btnSubmit").innerHTML = "生成"
+        document.getElementById("forked").innerHTML = "分叉自"
+    }
+</script>
 </body>
 </html>

@@ -13,7 +13,7 @@
 
 ## Local
 
-`Python 3` Required
+**Python 3** Required
 
 ```
 pip install --no-cache-dir -r requirements.txt
@@ -29,7 +29,8 @@ docker run -d -p 5000:5000 seeleo/mobaxterm-genkey:latest
 
 ## Screenshot
 
-![mobaxterm seeleo com](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/64634131-798f-4070-a400-9b7a99dee557)
+![1](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/fa319fe6-b75c-404f-b6fb-59290cda0d66)
+![2](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/ea5387f5-144a-4b1c-a8a8-0847a0912223)
 
 ## Credits
 
