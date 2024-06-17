@@ -20,13 +20,16 @@
             background: #f5f5f5;
         }
 
-        .container {
-            margin-bottom: 10px;
+        h1 {
+            color: #303F9F;
+            text-justify: newspaper;
+            text-align: justify;
+            margin-bottom: 20px;
         }
 
-        h1 {
-            color: #6C809A;
-            text-justify: newspaper;
+        .container {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         button {
@@ -55,6 +58,7 @@
             font-family: Roboto, Arial, sans-serif;
             font-size: 15px;
             background-color: #242424;
+            color: #212121;
         }
 
         form {
@@ -82,11 +86,6 @@
             opacity: 0.8;
         }
 
-        .formcontainer {
-            text-align: left;
-            margin: 24px 50px 12px;
-        }
-
         .container {
             padding: 16px 0;
             text-align: left;
@@ -98,7 +97,7 @@
         }
 
         .github span {
-            color: #242424;
+            color: #212121;
             font-size: smaller;
         }
 
@@ -114,19 +113,17 @@
         }
 
         #btn-reset {
-            background-color: #75BBA7;
+            background-color: #757575;
         }
 
         #btn-submit {
-            background-color: #6C809A;
+            background-color: #3F51B5;
         }
     </style>
 </head>
 <body>
 <form action="./gen" mothod="get">
-    <h1>MobaXterm GenKey</h1>
-    <div class="formcontainer"></div>
-    <hr/>
+    <h1>MobaXterm&ensp;GenKey</h1>
     <div class="container">
         <label for="name"><strong>Name</strong></label>
         <label>
@@ -135,7 +132,7 @@
         <div id="space"></div>
         <label for="ver"><strong>Version</strong></label>
         <label>
-            <input name="ver" placeholder="Enter Version (24.1)" pattern="[0-9]+(\.[0-9]+)?" required type="text">
+            <input name="ver" pattern="[0-9]+(\.[0-9]+)?" placeholder="Enter Version (24.1)" required type="text">
         </label>
     </div>
     <button id="btn-reset" type="reset">Reset</button>
