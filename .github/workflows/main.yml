@@ -21,11 +21,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push
         id: docker_build
         uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
           file: Dockerfile
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mobaxterm-genkey:latest
