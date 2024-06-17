@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.12-slim
 
 MAINTAINER malaohu <tua@live.cn>
 
