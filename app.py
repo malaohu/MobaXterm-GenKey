@@ -130,8 +130,9 @@ def download_lc(lc):
     if lc and len(lc) > 5 and os.path.exists('./' + lc):
         return send_file(
             lc,
-            as_attachment=True,
-            attachment_filename='Custom.mxtpro'
+            None,
+            True,
+            'Custom.mxtpro'
         )
     else:
         return "请检查用户名、版本号是否正确！"
