@@ -101,7 +101,7 @@ def GenerateLicense(Type: int, Count: int, UserName: str, MajorVersion: int, Min
         MajorVersion, MinorVersion, MinorVersion,
         0,  # Unknown
         0,  # No Games flag. 0 means "NoGames = false". But it does not work.
-        0   # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
+        0  # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
     )
     EncodedLicenseString = VariantBase64Encode(EncryptBytes(0x787, LicenseString.encode())).decode()
     FileName = EncodedLicenseString.replace('/', '').replace('\\', '')
@@ -150,4 +150,8 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(
+        '0.0.0.0',
+        5000,
+        False
+    )
