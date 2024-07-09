@@ -14,7 +14,7 @@
         }
 
         form {
-            width: 300px; /* Set the width of the form */
+            width: 350px; /* Set the width of the form */
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -134,13 +134,12 @@
         }
 
         #inputName {
-            width: 300px;
             height: 47px;
             color: #333;
         }
 
         #inputVersion {
-            width: 283px;
+            width: 334px;
             height: 35px;
         }
     </style>
@@ -150,20 +149,18 @@
     <h1>MobaXterm&ensp;GenKey</h1>
     <div class="container">
         <label for="name" id="lblName">Name</label>
-        <label>
+        <label style="width: 350px; display: block;">
             <input name="name" id="inputName" placeholder="Enter Name" required type="text">
         </label>
         <div id="space"></div>
         <label for="ver" id="lblVersion">Version</label>
-        <label>
+        <label style="width: 350px; display: block;">
             <input name="ver" id="inputVersion" type="number" placeholder="Enter Version (24.1)" step="0.1" min="0" />
         </label>
     </div>
     <button id="btnReset" type="reset">Reset</button>
     <button id="btnSubmit" type="submit">Generate</button>
     <div class="github">
-        <label>
-        </label>
         <span>
             <a href="https://github.com/lzcapp/MobaXterm-GenKey" style="text-decoration: none;">
                 <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
