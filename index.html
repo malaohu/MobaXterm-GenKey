@@ -150,12 +150,12 @@
     <div class="container">
         <label for="name" id="lblName">Name</label>
         <label style="width: 350px; display: block;">
-            <input name="name" id="inputName" placeholder="Enter Name" required type="text">
+            <input name="name" id="inputName" placeholder="Please enter name" required type="text">
         </label>
         <div id="space"></div>
         <label for="ver" id="lblVersion">Version</label>
         <label style="width: 350px; display: block;">
-            <input name="ver" id="inputVersion" type="number" placeholder="Enter Version (24.1)" step="0.1" min="0" />
+            <input name="ver" id="inputVersion" type="number" placeholder="Please enter version" step="0.1" min="0" />
         </label>
     </div>
     <button id="btnReset" type="reset">Reset</button>
@@ -184,7 +184,7 @@
         document.getElementById("lblName").innerHTML = "用户名"
         document.getElementById("inputName").placeholder = "请输入用户名"
         document.getElementById("lblVersion").innerHTML = "版本"
-        document.getElementById("inputVersion").placeholder = "请输入版本（24.1）"
+        document.getElementById("inputVersion").placeholder = "请输入版本"
         document.getElementById("btnReset").innerHTML = "清空"
         document.getElementById("btnSubmit").innerHTML = "生成"
         document.getElementById("forked").innerHTML = "分叉自"
