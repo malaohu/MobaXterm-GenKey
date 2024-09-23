@@ -1,73 +1,194 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MobaXterm Keygen</title>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <title>MobaXterm GenKey</title>
     <link href="https://fonts.googleapis.cnpmjs.org/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
-      html, body {
-      display: flex;
-      justify-content: center;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 15px;
-      }
-      form {
-      border: 5px solid #f1f1f1;
-      }
-      input[type=text], input[type=text] {
-      width: 100%;
-      padding: 16px 8px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      }
-      button {
-      background-color: #8ebf42;
-      color: white;
-      padding: 14px 0;
-      margin: 10px 0;
-      border: none;
-      cursor: grabbing;
-      width: 100%;
-      }
-      h1 {
-      text-align:center;
-      font-size:18;
-      }
-      button:hover {
-      opacity: 0.8;
-      }
-      .formcontainer {
-      text-align: left;
-      margin: 24px 50px 12px;
-      }
-      .container {
-      padding: 16px 0;
-      text-align: left;
-      }
-      .github {
-      padding: 16px 0;
-      text-align: center;
-      }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 350px; /* Set the width of the form */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #303F9F;
+            text-justify: newspaper;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0 20px;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        .github {
+            text-align: center;
+        }
+
+        html, body {
+            display: flex;
+            justify-content: center;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 15px;
+            background-color: #2b2b2b;
+            color: #212121;
+        }
+
+        form {
+            border: 5px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=text] {
+            width: 100%;
+            padding: 16px 8px;
+            margin: 10px 0 10px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        #space {
+            height: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px 0;
+            text-align: left;
+        }
+
+        .github {
+            padding: 20px 0 0;
+            text-align: right;
+        }
+
+        .github span {
+            color: #212121;
+            font-size: smaller;
+        }
+
+        .github span a {
+            color: #242424;
+            font-weight: bold;
+        }
+
+        .github span a img {
+            height: 18px;
+            padding-bottom: 3px;
+            vertical-align: middle;
+        }
+
+        #btnReset {
+            margin-top: 15px;
+            background-color: #757575;
+        }
+
+        #btnSubmit {
+            background-color: #3F51B5;
+        }
+
+        #lblName, #lblVersion {
+            font-weight: bold;
+        }
+
+        #inputName, #inputVersion {
+            height: 35px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px 5px 5px 10px;
+        }
+
+        #inputName {
+            height: 47px;
+            color: #333;
+        }
+
+        #inputVersion {
+            width: 334px;
+            height: 35px;
+        }
     </style>
-  </head>
-  <body>
-    <form action="./gen" mothod="get">
-      <h1>MobaXterm Keygen</h1>
-      <div class="formcontainer"></div>
-      <hr/>
-      <div class="container">
-        <label for="name"><strong>Name</strong></label>
-        <input type="text" placeholder="Enter name" name="name" required>
-        <label for="ver"><strong>Version</strong></label>
-        <input type="text" placeholder="Enter version: (21.1)" name="ver" required>
-      </div>
-      <button type="submit">Gen!</button>
-      <div class="github">
-        <label style="padding-left: 15px">
+</head>
+<body>
+<form action="./gen" mothod="get">
+    <h1>MobaXterm&ensp;GenKey</h1>
+    <div class="container">
+        <label for="name" id="lblName">Name</label>
+        <label style="width: 350px; display: block;">
+            <input name="name" id="inputName" placeholder="Please enter name" required type="text">
         </label>
-        <span><a style="text-decoration: none;" href="https://github.com/malaohu/MobaXterm-GenKey">View on GitHub</a><img src="https://github.githubassets.com/favicons/favicon.svg" height="16px"></span>
-      </div>
-    </form>
-  </body>
+        <div id="space"></div>
+        <label for="ver" id="lblVersion">Version</label>
+        <label style="width: 350px; display: block;">
+            <input name="ver" id="inputVersion" type="number" placeholder="Please enter version" step="0.1" min="0" />
+        </label>
+    </div>
+    <button id="btnReset" type="reset">Reset</button>
+    <button id="btnSubmit" type="submit">Generate</button>
+    <div class="github">
+        <span>
+            <a href="https://github.com/lzcapp/MobaXterm-GenKey" style="text-decoration: none;">
+                <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
+                MobaXterm-GenKey
+            </a>
+            <span id="forked">forked from</span>
+            <a href="https://github.com/malaohu/MobaXterm-GenKey" style="text-decoration: none;">
+                malaohu
+            </a>
+        </span>
+    </div>
+</form>
+<script>
+    const userLanguage = navigator.language || navigator.userLanguage;
+    const languageCode = userLanguage.substring(0, 2);
+
+    console.log(languageCode);
+
+    if (languageCode === "zh") {
+        document.documentElement.lang = "zh";
+        document.getElementById("lblName").innerHTML = "用户名"
+        document.getElementById("inputName").placeholder = "请输入用户名"
+        document.getElementById("lblVersion").innerHTML = "版本"
+        document.getElementById("inputVersion").placeholder = "请输入版本"
+        document.getElementById("btnReset").innerHTML = "清空"
+        document.getElementById("btnSubmit").innerHTML = "生成"
+        document.getElementById("forked").innerHTML = "分叉自"
+    }
+</script>
+</body>
 </html>

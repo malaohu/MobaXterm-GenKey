@@ -1,16 +1,19 @@
-#/usr/bin/env python3
+# /usr/bin/env python3
 
-import os, sys, zipfile
-from flask import Flask, request, send_file
+import os
 import os.path
+import zipfile
+
+from flask import Flask, request, send_file
 
 app = Flask(__name__)
 
 VariantBase64Table = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
-VariantBase64Dict = { i : VariantBase64Table[i] for i in range(len(VariantBase64Table)) }
-VariantBase64ReverseDict = { VariantBase64Table[i] : i for i in range(len(VariantBase64Table)) }
+VariantBase64Dict = {i: VariantBase64Table[i] for i in range(len(VariantBase64Table))}
+VariantBase64ReverseDict = {VariantBase64Table[i]: i for i in range(len(VariantBase64Table))}
 
-def VariantBase64Encode(bs : bytes):
+
+def VariantBase64Encode(bs: bytes):
     result = b''
     blocks_count, left_bytes = divmod(len(bs), 3)
 
@@ -38,7 +41,8 @@ def VariantBase64Encode(bs : bytes):
         result += block.encode()
         return result
 
-def VariantBase64Decode(s : str):
+
+def VariantBase64Decode(s: str):
     result = b''
     blocks_count, left_bytes = divmod(len(s), 4)
 
@@ -65,42 +69,48 @@ def VariantBase64Decode(s : str):
     else:
         raise ValueError('Invalid encoding.')
 
-def EncryptBytes(key : int, bs : bytes):
+
+def EncryptBytes(key: int, bs: bytes):
     result = bytearray()
     for i in range(len(bs)):
         result.append(bs[i] ^ ((key >> 8) & 0xff))
         key = result[-1] & key | 0x482D
     return bytes(result)
 
-def DecryptBytes(key : int, bs : bytes):
+
+def DecryptBytes(key: int, bs: bytes):
     result = bytearray()
     for i in range(len(bs)):
         result.append(bs[i] ^ ((key >> 8) & 0xff))
         key = bs[i] & key | 0x482D
     return bytes(result)
 
+
 class LicenseType:
     Professional = 1
     Educational = 3
-    Persional = 4
+    Personal = 4
 
-def GenerateLicense(Type : LicenseType, Count : int, UserName : str, MajorVersion : int, MinorVersion):
-    assert(Count >= 0)
-    LicenseString = '%d#%s|%d%d#%d#%d3%d6%d#%d#%d#%d#' % (Type, 
-                                                          UserName, MajorVersion, MinorVersion, 
-                                                          Count, 
-                                                          MajorVersion, MinorVersion, MinorVersion,
-                                                          0,    # Unknown
-                                                          0,    # No Games flag. 0 means "NoGames = false". But it does not work.
-                                                          0)    # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
+
+def GenerateLicense(Type: int, Count: int, UserName: str, MajorVersion: int, MinorVersion):
+    assert (Count >= 0)
+    LicenseString = '%d#%s|%d%d#%d#%d3%d6%d#%d#%d#%d#' % (
+        Type,
+        UserName, MajorVersion, MinorVersion,
+        Count,
+        MajorVersion, MinorVersion, MinorVersion,
+        0,  # Unknown
+        0,  # No Games flag. 0 means "NoGames = false". But it does not work.
+        0  # No Plugins flag. 0 means "NoPlugins = false". But it does not work.
+    )
     EncodedLicenseString = VariantBase64Encode(EncryptBytes(0x787, LicenseString.encode())).decode()
-    FileName = EncodedLicenseString.replace('/','').replace('\\','')
+    FileName = EncodedLicenseString.replace('/', '').replace('\\', '')
     with zipfile.ZipFile(FileName, 'w') as f:
-        f.writestr('Pro.key', data = EncodedLicenseString)
+        f.writestr('Pro.key', data=EncodedLicenseString)
     return FileName
 
 
-#@app.route('/gen')
+# @app.route('/gen')
 def get_lc():
     name = request.args.get('name', '')
     version = request.args.get('ver', '')
@@ -115,14 +125,17 @@ def get_lc():
     return lc
 
 
-#@app.route('/download/<lc>')
+# @app.route('/download/<lc>')
 def download_lc(lc):
     if lc and len(lc) > 5 and os.path.exists('./' + lc):
-        return send_file(lc,
-            as_attachment=True,
-            attachment_filename='Custom.mxtpro') 
+        return send_file(
+            lc,
+            None,
+            True,
+            'Custom.mxtpro'
+        )
     else:
-        return "请检查用户名版本号是否正确！"
+        return "请检查用户名、版本号是否正确！"
 
 
 @app.route('/gen')
@@ -136,8 +149,9 @@ def index():
     return send_file('index.html')
 
 
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
-
+    app.run(
+        '0.0.0.0',
+        5000,
+        False
+    )

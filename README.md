@@ -1,33 +1,50 @@
-# MobaXterm-GenKey
-你懂的！！
+# MobaXterm-GenKey (Docker)
 
-## 演示地址
-http://192.99.11.204:5000/
+🔗 For the static web app version, see [MobaXterm-GenKey-Web](https://github.com/lzcapp/MobaXterm-GenKey-Web).
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/lzcapp/MobaXterm-GenKey/main.yml?style=for-the-badge)
+&ensp; ![Docker Image Version](https://img.shields.io/docker/v/seeleo/mobaxterm-genkey?style=for-the-badge)
+&ensp; ![Docker Image Size](https://img.shields.io/docker/image-size/seeleo/mobaxterm-genkey?style=for-the-badge) &ensp; ![Website](https://img.shields.io/website?url=https%3A%2F%2Fmobaxterm.seeleo.com%2F&style=for-the-badge&label=mobaxterm.seeleo.com)
 
+**FOR EDUCATIONAL AND TESTING PURPOSE ONLY**
 
-## 本地启动
-需要安装Python3!!!
+## Demo
+
+- [mobaxterm.seeleo.com](https://mobaxterm.seeleo.com/)
+
+## Local
+
+**Python 3** Required
+
 ```
 pip install --no-cache-dir -r requirements.txt
 python app.py
 ```
 
 ## Docker
+
+### Docker Hub
+
 ```
-docker pull malaohu/mobaxterm-genkey
-docker run -d -p 5000:5000 malaohu/mobaxterm-genkey
+docker pull seeleo/mobaxterm-genkey:latest
+docker run -d -p 5000:5000 seeleo/mobaxterm-genkey:latest
 ```
 
 
-## 使用方法
-访问：IP:5000
-![image](https://user-images.githubusercontent.com/8140841/116803404-e94c8300-ab49-11eb-83db-ad0246ebedd3.png)
+### Container Registry (GitHub)
 
-### 激活方式
-直接放到软件目录即可！
+```
+docker pull ghcr.io/lzcapp/mobaxterm-genkey:latest
+docker run -d -p 5000:5000 ghcr.io/lzcapp/mobaxterm-genkey:latest
+```
 
+## Screenshot
 
+![1](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/fa319fe6-b75c-404f-b6fb-59290cda0d66)
+![2](https://github.com/malaohu/MobaXterm-GenKey/assets/12462465/ea5387f5-144a-4b1c-a8a8-0847a0912223)
 
-核心内容来自：https://github.com/flygon2018/MobaXterm-keygen
-详细介绍文章：https://51.ruyo.net/17008.html
+## Credits
+
+> - https://github.com/flygon2018/MobaXterm-keygen
+>   - https://github.com/malaohu/MobaXterm-GenKey
+> - https://51.ruyo.net/17008.html
