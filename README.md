@@ -1,4 +1,6 @@
-# MobaXterm-GenKey
+# MobaXterm-GenKey (Docker)
+
+🔗 For the static web app version, see [MobaXterm-GenKey-Web](https://github.com/lzcapp/MobaXterm-GenKey-Web).
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/lzcapp/MobaXterm-GenKey/main.yml?style=for-the-badge)
 &ensp; ![Docker Image Version](https://img.shields.io/docker/v/seeleo/mobaxterm-genkey?style=for-the-badge)
