@@ -31,3 +31,7 @@ docker run -d -p 5000:5000 malaohu/mobaxterm-genkey
 
 核心内容来自：https://github.com/flygon2018/MobaXterm-keygen
 详细介绍文章：https://51.ruyo.net/17008.html
+
+CDN acceleration and security protection for this project are sponsored by Tencent EdgeOne.
+[![image](https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png)](https://edgeone.ai/?from=github)
+
