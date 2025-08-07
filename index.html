@@ -1,73 +1,354 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MobaXterm Keygen</title>
-    <link href="https://fonts.googleapis.cnpmjs.org/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.cnpmjs.org/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
       html, body {
-      display: flex;
-      justify-content: center;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 16px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
       }
+      
+      .form-wrapper {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        width: 100%;
+        max-width: 600px;
+        animation: slideUp 0.6s ease-out;
+      }
+      
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
       form {
-      border: 5px solid #f1f1f1;
+        padding: 50px 40px;
       }
-      input[type=text], input[type=text] {
-      width: 100%;
-      padding: 16px 8px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      }
-      button {
-      background-color: #8ebf42;
-      color: white;
-      padding: 14px 0;
-      margin: 10px 0;
-      border: none;
-      cursor: grabbing;
-      width: 100%;
-      }
+      
       h1 {
-      text-align:center;
-      font-size:18;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
+      
+      .subtitle {
+        text-align: center;
+        color: #718096;
+        font-size: 16px;
+        margin-bottom: 40px;
+        line-height: 1.5;
+      }
+      
+      .form-group {
+        margin-bottom: 28px;
+      }
+      
+      label {
+        display: block;
+        font-weight: 500;
+        color: #4a5568;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      
+      input[type="text"] {
+        width: 100%;
+        padding: 18px 20px;
+        border: 2px solid #e2e8f0;
+        border-radius: 14px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: #fff;
+        color: #2d3748;
+      }
+      
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      input[type="text"]::placeholder {
+        color: #a0aec0;
+      }
+      
+      button {
+        width: 100%;
+        padding: 18px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 12px 0 32px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
       button:hover {
-      opacity: 0.8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
       }
-      .formcontainer {
-      text-align: left;
-      margin: 24px 50px 12px;
+      
+      button:active {
+        transform: translateY(0);
       }
-      .container {
-      padding: 16px 0;
-      text-align: left;
+      
+      .divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+        margin: 24px 0;
       }
+      
       .github {
-      padding: 16px 0;
-      text-align: center;
+        text-align: center;
+        padding: 16px 0 0 0;
+      }
+      
+      .github a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #4a5568;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+      
+      .github a:hover {
+        color: #667eea;
+        background: rgba(102, 126, 234, 0.1);
+      }
+      
+      .github img {
+        width: 16px;
+        height: 16px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+      
+      .github a:hover img {
+        opacity: 1;
+      }
+      
+      /* 语言切换按钮 */
+      .language-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .lang-btn {
+        padding: 8px 16px;
+        border: none;
+        background: transparent;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        min-width: 60px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .lang-btn.active {
+        background: rgba(255, 255, 255, 0.9);
+        color: #4a5568;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .lang-btn:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* 响应式设计 */
+      @media (max-width: 480px) {
+        html, body {
+          padding: 16px;
+        }
+        
+        .form-wrapper {
+          border-radius: 16px;
+        }
+        
+        form {
+          padding: 40px 30px;
+        }
+        
+        h1 {
+          font-size: 28px;
+        }
+        
+        input[type="text"] {
+          padding: 16px 18px;
+        }
+        
+        button {
+          padding: 16px;
+        }
+        
+        .language-toggle {
+          top: 16px;
+          right: 16px;
+          padding: 4px;
+        }
+        
+        .lang-btn {
+          padding: 6px 12px;
+          font-size: 12px;
+          min-width: 50px;
+        }
       }
     </style>
   </head>
   <body>
-    <form action="./gen" mothod="get">
-      <h1>MobaXterm Keygen</h1>
-      <div class="formcontainer"></div>
-      <hr/>
-      <div class="container">
-        <label for="name"><strong>Name</strong></label>
-        <input type="text" placeholder="Enter name" name="name" required>
-        <label for="ver"><strong>Version</strong></label>
-        <input type="text" placeholder="Enter version: (21.1)" name="ver" required>
-      </div>
-      <button type="submit">Gen!</button>
-      <div class="github">
-        <label style="padding-left: 15px">
-        </label>
-        <span><a style="text-decoration: none;" href="https://github.com/malaohu/MobaXterm-GenKey">View on GitHub</a><img src="https://github.githubassets.com/favicons/favicon.svg" height="16px"></span>
-      </div>
-    </form>
+    <!-- 语言切换按钮 -->
+    <div class="language-toggle">
+      <button class="lang-btn active" onclick="switchLanguage('zh')" data-lang="zh">中文</button>
+      <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">EN</button>
+    </div>
+
+    <div class="form-wrapper">
+      <form action="./gen" method="get">
+        <h1 data-i18n="title">MobaXterm 密钥生成器</h1>
+        <p class="subtitle" data-i18n="subtitle">生成您的 MobaXterm 许可证密钥</p>
+        
+        <div class="form-group">
+          <label for="name" data-i18n="nameLabel">姓名</label>
+          <input type="text" id="name" name="name" data-i18n-placeholder="namePlaceholder" placeholder="请输入您的姓名" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="ver" data-i18n="versionLabel">版本</label>
+          <input type="text" id="ver" name="ver" data-i18n-placeholder="versionPlaceholder" placeholder="请输入版本号 (例如: 25.2)" required>
+        </div>
+        
+        <button type="submit" data-i18n="generateBtn">生成密钥</button>
+        
+        <div class="divider"></div>
+        
+        <div class="github">
+          <a href="https://github.com/malaohu/MobaXterm-GenKey" target="_blank" rel="noopener noreferrer">
+            <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
+            <span data-i18n="githubLink">在 GitHub 上查看</span>
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // 多语言文本配置
+      const translations = {
+        zh: {
+          title: 'MobaXterm 密钥生成器',
+          subtitle: '生成您的 MobaXterm 许可证密钥',
+          nameLabel: '姓名',
+          namePlaceholder: '请输入您的姓名',
+          versionLabel: '版本',
+          versionPlaceholder: '请输入版本号 (例如: 25.2)',
+          generateBtn: '生成密钥',
+          githubLink: '在 GitHub 上查看'
+        },
+        en: {
+          title: 'MobaXterm Keygen',
+          subtitle: 'Generate your MobaXterm license key',
+          nameLabel: 'Name',
+          namePlaceholder: 'Enter your name',
+          versionLabel: 'Version',
+          versionPlaceholder: 'Enter version (e.g., 25.2)',
+          generateBtn: 'Generate Key',
+          githubLink: 'View on GitHub'
+        }
+      };
+
+      // 当前语言
+      let currentLang = 'zh';
+
+      // 语言切换函数
+      function switchLanguage(lang) {
+        currentLang = lang;
+        
+        // 更新按钮状态
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+          }
+        });
+        
+        // 更新文本内容
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.dataset.i18n;
+          if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        
+        // 更新占位符
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+          const key = element.dataset.i18nPlaceholder;
+          if (translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+          }
+        });
+        
+        // 保存语言偏好
+        localStorage.setItem('preferred-language', lang);
+      }
+
+      // 页面加载时恢复语言偏好
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('preferred-language') || 'zh';
+        switchLanguage(savedLang);
+      });
+    </script>
   </body>
 </html>
+
