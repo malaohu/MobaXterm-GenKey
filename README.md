@@ -21,6 +21,7 @@ docker run -d -p 5000:5000 malaohu/mobaxterm-genkey
 
 ## 使用方法
 访问：IP:5000
+
 ![image](https://img14.360buyimg.com/ddimg/jfs/t1/327451/37/1655/17390/68940230F93909c3f/80f2e5a285489ac1.jpg)
 
 ### 激活方式
