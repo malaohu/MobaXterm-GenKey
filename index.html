@@ -81,7 +81,7 @@
         font-size: 14px;
       }
       
-      input[type="text"] {
+      input[type="text"], input[type="number"] {
         width: 100%;
         padding: 18px 20px;
         border: 2px solid #e2e8f0;
@@ -92,14 +92,14 @@
         color: #2d3748;
       }
       
-      input[type="text"]:focus {
+      input[type="text"]:focus, input[type="number"]:focus {
         outline: none;
         border-color: #667eea;
         box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         transform: translateY(-2px);
       }
       
-      input[type="text"]::placeholder {
+      input[type="text"]::placeholder, input[type="number"]::placeholder {
         color: #a0aec0;
       }
       
@@ -226,7 +226,7 @@
           font-size: 28px;
         }
         
-        input[type="text"] {
+        input[type="text"], input[type="number"] {
           padding: 16px 18px;
         }
         
@@ -270,6 +270,11 @@
           <input type="text" id="ver" name="ver" data-i18n-placeholder="versionPlaceholder" placeholder="请输入版本号 (例如: 25.2)" required>
         </div>
         
+        <div class="form-group">
+          <label for="count" data-i18n="countLabel">用户数</label>
+          <input type="number" id="count" name="count" data-i18n-placeholder="countPlaceholder" placeholder="请输入用户数量" value="1" min="1" max="999" required>
+        </div>
+        
         <button type="submit" data-i18n="generateBtn">生成密钥</button>
         
         <div class="divider"></div>
@@ -293,6 +298,8 @@
           namePlaceholder: '请输入您的姓名',
           versionLabel: '版本',
           versionPlaceholder: '请输入版本号 (例如: 25.2)',
+          countLabel: '用户数',
+          countPlaceholder: '请输入用户数量',
           generateBtn: '生成密钥',
           githubLink: '在 GitHub 上查看'
         },
@@ -303,6 +310,8 @@
           namePlaceholder: 'Enter your name',
           versionLabel: 'Version',
           versionPlaceholder: 'Enter version (e.g., 25.2)',
+          countLabel: 'User Count',
+          countPlaceholder: 'Enter user count',
           generateBtn: 'Generate Key',
           githubLink: 'View on GitHub'
         }
